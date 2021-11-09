@@ -99,7 +99,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         // Origin of route
         String str_origin = "origin=" + me.latitude + "," + me.longitude;
         // Destination of route
-        String str_dest = "destination=" + restaurant.latitude + "," + restaurant.longitude;
+        String str_dest = "destination=" + destination.latitude + "," + destination.longitude;
         // Mode
         String mode = "mode=" + directionMode;
         // Building the parameters to the web service
@@ -132,8 +132,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         Log.d("mylog", "Added Markers");
         mMap.addMarker(destination);
         mMap.addMarker(me);
-
-        //move the camera instantly to restaurant with a zoom of 15
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ME, 15));
     }
 }
