@@ -70,7 +70,6 @@ public class DetailForm extends AppCompatActivity {
     private View.OnClickListener onSave = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //To read data from restaurantName EditText
             String nameStr = locationName.getText().toString();
 
             if (locationID == null)
