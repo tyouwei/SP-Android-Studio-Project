@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_names">
+        <item>By Location Name, Ascending</item>
+        <item>By Location Name, Descending</item>
+
+    </string-array>
+    <string-array name="sort_clauses">
+        <item>locationName ASC</item>
+        <item>locationName DESC</item>
+
+    </string-array>
+</resources>
+
