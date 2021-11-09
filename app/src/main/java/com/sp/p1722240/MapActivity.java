@@ -31,12 +31,12 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private Button buttonList;
     private Button buttonRoute;
 
-    private MarkerOptions restaurant, me;
+    private MarkerOptions destination, me;
     private double lat;
     private double lon;
     private double myLat;
     private double myLon;
-    private LatLng RESTAURANT;
+    private LatLng DESTINATION;
     private LatLng ME;
     private Polyline currentPolyline;
 
@@ -57,11 +57,11 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         lon = getIntent().getDoubleExtra("LONGITUDE", 0);
         myLat = getIntent().getDoubleExtra("MYLATITUDE", 0);
         myLon = getIntent().getDoubleExtra("MYLONGITUDE", 0);
-        RESTAURANT = new LatLng(1.3010,103.8396 );
+        DESTINATION = new LatLng(1.3010,103.8396 );
         ME = new LatLng(myLat, myLon);
 
-        restaurant  = new MarkerOptions().position(ME).title("DESTINATION");
-        me = new MarkerOptions().position(RESTAURANT).title("ME");
+        DESTINATION  = new MarkerOptions().position(ME).title("DESTINATION");
+        me = new MarkerOptions().position(DESTINATION).title("ME");
 
 
 
@@ -90,12 +90,12 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private View.OnClickListener onRoute = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            new FetchUrl(MapActivity.this).execute(getUrl(me.getPosition(), restaurant.getPosition(), "driving"), "driving");
+            new FetchUrl(MapActivity.this).execute(getUrl(me.getPosition(), destination.getPosition(), "driving"), "driving");
             //Toast.makeText(MapActivity.this, "Test", Toast.LENGTH_LONG).show();
         }
     };
 
-    private String getUrl(LatLng me, LatLng restaurant, String directionMode) {
+    private String getUrl(LatLng me, LatLng destination, String directionMode) {
         // Origin of route
         String str_origin = "origin=" + me.latitude + "," + me.longitude;
         // Destination of route
@@ -130,7 +130,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         Log.d("mylog", "Added Markers");
-        mMap.addMarker(restaurant);
+        mMap.addMarker(destination);
         mMap.addMarker(me);
 
         //move the camera instantly to restaurant with a zoom of 15
