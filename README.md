@@ -5,4 +5,4 @@ My hard drive containing my projects bricked a year ago and I am unable to recov
 
 Functionalities missing:
 1. Search bar that will allow users to type in their location, which will then automatically navigate to said location
-2. Geofence functionality that will notify user when they are nearing their destination
+2. Geofence functionality
