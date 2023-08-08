@@ -1,8 +1,4 @@
 # SP-Android-Studio-Project
 
-This is NOT the complete mobile app project that I made and is dysfunctional, there are about 1 or 2 major functionalities that are missing from what I remember.
-My hard drive containing my projects bricked a year ago and I am unable to recover the full project.
-
-Functionalities missing:
-1. Search bar that will allow users to type in their location, which will then automatically navigate to said location
-2. Geofence functionality
+An app made to help users navigate from source to destination. 
+There is also a side feature to help users calculate the expected fuel usage and cost before embarking on the journey
